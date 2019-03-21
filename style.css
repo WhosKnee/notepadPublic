@@ -1,0 +1,16 @@
+.jumbotron {
+    padding-bottom: 3%;
+}
+
+.newNote {
+    display: none;
+    border: 2px solid gray;
+    margin-left: 10px;
+    padding: 10px;
+    width: 20%;
+}
+
+.form-control {
+    margin-bottom: 8px;
+}
+
