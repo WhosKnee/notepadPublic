@@ -19,11 +19,13 @@
                 <button type="button" class="btn btn-dark" onclick="newNote()">New Note</button>
                 
             </div>
-            <div class="newNote">
-                <p class="lead">Text field below:</p>
-                <input type="text" id="title" class="form-control" placeholder="Title">
-                <input type="text" id="textFill" class="form-control" placeholder="Text">
-                <button type="button" id="save" class="btn btn-dark btn-sm" onclick="save()">Save Note</button>
+            <div class="rightBorder">
+                <form class="newNote" id="newNote">
+                    <h6 class="textField">Text field below:</h6>
+                    <input type="text" id="title" class="form-control" placeholder="Title">
+                    <input type="text" id="textFill" class="form-control" placeholder="Text">
+                    <button type="button" id="save" class="btn btn-dark btn-sm" onclick="save()">Save Note</button>
+                </form>
             </div>
         </body>
 </html>
