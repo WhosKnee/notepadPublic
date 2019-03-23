@@ -19,14 +19,22 @@
                 <button type="button" class="btn btn-dark" onclick="newNote()">New Note</button>
                 
             </div>
-            <div class="rightBorder">
-                <form class="newNote" id="newNote">
-                    <h6 class="textField">Text field below:</h6>
-                    <input type="text" id="title" class="form-control" placeholder="Title">
-                    <input type="text" id="textFill" class="form-control" placeholder="Text">
-                    <button type="button" id="save" class="btn btn-dark btn-sm" onclick="save()">Save Note</button>
-                </form>
+            <div class="row" id="pageRow">
+                <div class="rightBorder col-lg-3 col-sm-6 col-12">
+                    <form class="newNote" id="newNote">
+                        <h6 class="textField">Text field below:</h6>
+                        <input type="text" id="title" class="form-control" placeholder="Title">
+                        <input type="text" id="textFill" class="form-control" placeholder="Text">
+                        <button type="button" id="save" required="required" class="btn btn-dark btn-sm" onclick="saveNote()">Save Note</button>
+                        <button type="button" id="delete" required="required" class="btn btn-secondary btn-sm" onclick="deleteNote()">Delete Note</button>
+                    </form>
+                </div>
+                <div class="col-lg-9 col-sm-6 col-12" id="pastNotes">
+                    <div class="row" id="holdNotes">
+                    </div>
+                </div> 
             </div>
+
         </body>
 </html>
 

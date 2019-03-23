@@ -6,6 +6,7 @@
 html, body {
     margin: 0;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .form-control {
@@ -32,14 +33,73 @@ html, body {
     padding-right: 30px;
     padding-top: 10px;
     margin-top: 0px;
-    height: 100%;
-    width: 30%;
+}
+
+.card {
+    margin:0;
+    border: 7px solid black;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 10px;
+}
+
+.card-title {
+    display: inline-flex
+}
+
+.card-body {
+    margin: 0;
+    padding-bottom: 0;
     
 }
 
+.existingButton {
+    border-radius: 0;
+    margin-bottom: 3px;
+    background-color: white;
+    border: 0px;
+    border-top: solid 1px black;
+    color: black;
+    padding: 0px;
+    bottom: 0;
+    height: 100%;
+}
+
+#delete:hover {
+    background-color: #E75050;
+    border: #E75050;
+    animation: 0;
+}
+
+#save:hover {
+    background-color: #74E870;
+    border: #74E870;
+    animation: 0;
+}
+
+#pastNotes {
+    background-color: black;
+    display:  inline-flex;
+    flex-flow: column;
+    padding-right: 20px;
+    border-right: #FF8801 solid 20px;
+}
 
 #newNote {
     visibility: hidden;
     display: inline-block;
     margin: 5px;
+}
+
+#pageRow {
+    height: 100%;
+}
+
+#deleteExistingNote:hover {
+    background-color: #F8ADAA;
+    color: black;
+}
+#editExistingNote:hover {
+    background-color: #ADF8AA;
+    color: black;
 }
