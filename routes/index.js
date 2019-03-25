@@ -6,7 +6,6 @@ var middleware = require("../middleware/index.js");
 
 // landing page redirection
 router.get("/", function(req, res){
-    console.log(req.user);
     res.render("./index/landing");
 })
 

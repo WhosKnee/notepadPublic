@@ -4,6 +4,10 @@ html {
     overflow-y: hidden;
 }
 
+.div.auths.col-1 {
+    width:0%;
+}
+
 .row {
     margin: 0;
     padding: 0;
@@ -11,6 +15,11 @@ html {
 
 .coloumn {
     padding: 0;
+    height: 100%;
+}
+
+#col1:hover {
+    width: 100%;
 }
 
 .auths {
@@ -20,9 +29,16 @@ html {
     color: #000000;
 }
 
+
+.auths:hover {
+    color: #000000;
+}
+
+
+
 #buttons {
     width: 200px;
-    font-size: 20px;
+    font-size: 23px;
 }
 #col1 {
     background-color: #CBDFBD;
@@ -42,10 +58,11 @@ html {
 
 
 #landingBackground {
-    background-color: #FEFBEF;
+    background-color: #F3DADA;
     color: #000000;
     margin: 0;
     padding: 0;
+    animation: bgColorTransition 30s infinite linear;
 }
 
 #landingContainer {
@@ -54,10 +71,64 @@ html {
     width: 100%;
 }
 
+#subtitle {
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-weight: 400;
+}
+
 #text {
     top: 50%;
     margin: 0;
     padding-right: 0;
     padding-left: 5%;
+    height: 15%;
+    margin-bottom:  300px;
 }
 
+
+#title {
+    font-size: 3rem;
+}
+
+@keyframes bgColorTransition {
+    0%   {background-color: #F3DADA;}
+    15%  {background-color: #FDD29A;}
+    30%  {background-color: #FEB58B;}
+    45%  {background-color: rgb(248, 166, 118);}
+    60%  {background-color: #FEB58B;}
+    75%  {background-color: #FDD29A;}
+    90%   {background-color: #F3DADA;}
+  }
+  
+  @media(max-width:575px) {
+    #title {
+      text-align: center;
+      padding-left: 2%;
+      padding-right: 2%;
+      margin-bottom: 7%;
+    }
+
+    #subtitle {
+        text-align: center;
+        margin-bottom: 7%;
+    }
+
+    #text {
+        padding-left: 0;
+        top: 30%;
+    }
+
+    #buttons {
+        width: 100%;
+        align-self: center;
+    }
+
+    #authLeft {
+        text-align: right;
+    }
+    
+    #authRight{
+        text-align: left;
+    }
+  }
