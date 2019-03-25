@@ -1,3 +1,7 @@
+
+
+/* Dashboard Styling */
+
 .navbar {
     background-color: #e9ecef;
     color: black;
@@ -87,6 +91,10 @@ html, body {
     background-color: #E75050;
     border: #E75050;
     animation: 0;
+}
+
+#left {
+    background-color: #FEFBEF;
 }
 
 #save:hover {

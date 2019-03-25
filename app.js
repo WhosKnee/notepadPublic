@@ -30,9 +30,20 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// this will pass currentUser as a variable which can be used in any
+// ejs page to access the user
+// will have "currentUser" from req.user. I.e {currentUser: req.user}
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+})
+
 // get routes from routes folder
 var indexRoutes = require("./routes/index.js");
 app.use(indexRoutes);
+
+// get stylesheets, where __dirname is up to /V10
+app.use(express.static(__dirname + "/public"))
 
 app.listen(3000, function(){
     console.log("The Notepad server has started ");

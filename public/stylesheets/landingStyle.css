@@ -1,0 +1,63 @@
+/* Landing Page Styling */
+
+html {
+    overflow-y: hidden;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.coloumn {
+    padding: 0;
+}
+
+.auths {
+    padding: 0;
+    padding-bottom: 5px;
+    margin: 0;
+    color: #000000;
+}
+
+#buttons {
+    width: 200px;
+    font-size: 20px;
+}
+#col1 {
+    background-color: #CBDFBD;
+}
+
+#col2 {
+    background-color: #D4E09B;
+}
+
+#col3 {
+    background-color: #F19C79;
+}
+
+#col4 {
+    background-color: #B46A61;
+}
+
+
+#landingBackground {
+    background-color: #FEFBEF;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+#landingContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#text {
+    top: 50%;
+    margin: 0;
+    padding-right: 0;
+    padding-left: 5%;
+}
+

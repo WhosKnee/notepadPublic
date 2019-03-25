@@ -2,9 +2,11 @@ var express = require("express");
 var router = express.Router({mergeParams: true});
 var passport = require("passport");
 var User = require("../models/user");
+var middleware = require("../middleware/index.js");
 
 // landing page redirection
 router.get("/", function(req, res){
+    console.log(req.user);
     res.render("./index/landing");
 })
 
@@ -16,37 +18,48 @@ router.get("/register", function(req, res){
 // registration page POST request after user has submitted info
 router.post("/register", function(req, res) {
     // create user object with it's username first
-    var newUser = new newUser({username:req.body.username});
+    var newUser = new User({username:req.body.username});
     User.register(newUser, req.body.password, function(err, user){
         if(err){
-            res.redirect("./index/register");
+            res.redirect("/register");
         }
         else {
             passport.authenticate("local")(req, res, function(){
-                res.redirect("/dashboard");
+                res.redirect("/buffer");
             });
         }
     })
 })
 
-// Get request to the login page
+// GET request to the login page
 router.get("/login", function(req, res){
     // error was the keyword used if isLoggedIn middleware failed.
     res.render("./index/login");
 })
 
-// Post request to the login page
+// POST request to the login page
 router.post("/login", passport.authenticate("local",
     {
-        successRedirect: "./index/dashboard",
-        failureRedirect: "./index/login"
-    }), function(req, res){
+        successRedirect: "/buffer",
+        failureRedirect: "/login"
+    }),
+    function(req, res){
 })
 
+// buffer is a GET route which acts an intermediate so that we can access
+// req.user between passport auth and redirection
+router.get("/buffer", function(req, res){
+    res.redirect("/dashboard/" + req.user.username);
+})
 // logout GET request
 router.get("/logout", function(req, res){
     res.logout();
-    res.redirect("./index/landing");
+    res.redirect("/landing");
+})
+
+// Dashboard GET request
+router.get("/dashboard/:name", function(req,res){
+    res.render("./dashboard");
 })
 
 // export these routes
