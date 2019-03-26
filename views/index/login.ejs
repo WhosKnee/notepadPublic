@@ -1,9 +1,14 @@
 <% include ../partials/header %>
 
-Welcome to the login page:
 
-<form action="/login" method="POST">
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <button>Login</button>
-</form>
+
+<div id="loginForm">
+    <p>Welcome to the login page:</p>
+    <form action="/login" method="POST">
+        <div id="username">Username:</div>
+        <input class="cred" type="text" name="username" placeholder="Username">
+        <div id="password">Password:</div>
+        <input class="cred" type="password" name="password" placeholder="Password">
+        <button class="btn btn-outline-dark">Login</button>
+    </form>
+</div>

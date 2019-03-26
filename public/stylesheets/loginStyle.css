@@ -1,0 +1,47 @@
+body {
+    background-color: #F3DADA;
+    animation: bgColorTransition 30s infinite linear;
+}
+
+p {
+    margin: 10% 10% 10% 0%;
+    text-align: left;
+    font-size: 20px;
+}
+
+.cred {
+    margin-bottom: 10%;
+    text-align: center;
+    border: 0px;
+    border-radius: 5px;
+}
+
+#loginForm {
+    width: 240px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: black solid 0.5px;
+    border-radius: 15px;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: black;
+}
+
+#username #password {
+    text-align: left;
+}
+
+@keyframes bgColorTransition {
+    0%   {background-color: #F3DADA;}
+    15%  {background-color: #FDD29A;}
+    30%  {background-color: #FEB58B;}
+    45%  {background-color: rgb(248, 166, 118);}
+    60%  {background-color: #FEB58B;}
+    75%  {background-color: #FDD29A;}
+    90%   {background-color: #F3DADA;}
+  }
