@@ -3,12 +3,12 @@
 
 
 <div id="loginForm">
-    <p>Welcome to the login page:</p>
+    <p>Login</p>
     <form action="/login" method="POST">
-        <div id="username">Username:</div>
-        <input class="cred" type="text" name="username" placeholder="Username">
-        <div id="password">Password:</div>
-        <input class="cred" type="password" name="password" placeholder="Password">
-        <button class="btn btn-outline-dark">Login</button>
+        <i class="far fa-user"></i><span id="username">Username:</span>
+        <input class="cred" type="text" name="username" placeholder="Username" onblur="this.placeholder = 'Username'" onfocus="this.placeholder = ''"></input>
+        <i class="fas fa-fingerprint"></i><span id="password">Password:</span>
+        <input class="cred" type="password" name="password" placeholder="Password" onblur="this.placeholder = 'Password'" onfocus="this.placeholder = ''">
+        <button id="submit" class="btn btn-outline-dark">Login</button>
     </form>
 </div>

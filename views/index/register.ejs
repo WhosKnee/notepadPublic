@@ -1,9 +1,12 @@
 <% include ../partials/header %>
 
-Welcome to the Sign up page:
-
-<form action="/register" method="POST">
-    <input type="text" name="username" placeholder="Username">
-    <input type="password" name="password" placeholder="Password">
-    <button>Sign Up</button>
-</form>
+<div id="loginForm">
+    <p>Sign Up</p>
+    <form action="/register" method="POST">
+        <i class="far fa-user"></i><span id="username">Username:</span>
+        <input class="cred" type="text" name="username" placeholder="Username" onblur="this.placeholder = 'Username'" onfocus="this.placeholder = ''"></input>
+        <i class="fas fa-fingerprint"></i><span id="password">Password:</span>
+        <input class="cred" type="password" name="password" placeholder="Password" onblur="this.placeholder = 'Password'" onfocus="this.placeholder = ''">
+        <button id="submit" class="btn btn-outline-dark">Sign Up</button>
+    </form>
+</div>

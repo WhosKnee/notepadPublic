@@ -4,36 +4,60 @@ body {
 }
 
 p {
-    margin: 10% 10% 10% 0%;
-    text-align: left;
+    margin: 10% 10% 10% 10%;
+    text-align: center;
     font-size: 20px;
+    font-weight: 600;
 }
 
 .cred {
     margin-bottom: 10%;
     text-align: center;
     border: 0px;
-    border-radius: 5px;
+    border-bottom: black solid 1px;
+}
+
+.cred:focus {
+    outline: none;
+    animation: bottomBorder linear 1s;
+}
+
+.fa-user, .fa-fingerprint {
+    margin-right: 3%;
+    margin-bottom: 5%;
 }
 
 #loginForm {
     width: 240px;
-    height: 300px;
+    height: 350px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
-    border: black solid 0.5px;
+    border: 0px;
     border-radius: 15px;
     padding-left: 2%;
     padding-right: 2%;
     color: black;
+    background-color: white;
+
+    -webkit-animation: fadein 2s;   /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s;      /* Firefox < 16 */
+    -ms-animation: fadein 2s;       /* Internet Explorer */
+    -o-animation: fadein 2s;        /* Opera < 12.1 */ 
+    animation: fadein 2s;
 }
 
 #username #password {
     text-align: left;
+}
+
+#submit {
+    width: 80%;
+    text-align: center;
+    margin: 10% 9% 0 9%;
 }
 
 @keyframes bgColorTransition {
@@ -45,3 +69,32 @@ p {
     75%  {background-color: #FDD29A;}
     90%   {background-color: #F3DADA;}
   }
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
