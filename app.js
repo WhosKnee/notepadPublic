@@ -40,7 +40,9 @@ app.use(function(req, res, next){
 
 // get routes from routes folder
 var indexRoutes = require("./routes/index.js");
+var noteRoutes  = require("./routes/note.js");
 app.use(indexRoutes);
+app.use(noteRoutes);
 
 // get stylesheets, where __dirname is up to /V10
 app.use(express.static(__dirname + "/public"))

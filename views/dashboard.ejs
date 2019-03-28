@@ -10,12 +10,12 @@
             </div>
             <div class="row" id="pageRow">
                 <div id="left" class="rightBorder col-lg-3 col-sm-6 col-12">
-                    <form class="newNote" id="newNote">
+                    <form class="newNote" action="/note/" method="POST" target="dummyframe" id="newNote">
                         <h6 class="textField">Text field below:</h6>
-                        <input type="text" id="title" class="form-control" placeholder="Title">
-                        <input type="text" id="textFill" class="form-control" placeholder="Text">
-                        <button type="button" id="save" required="required" class="btn btn-dark btn-sm" onclick="saveNote()">Save Note</button>
-                        <button type="button" id="delete" required="required" class="btn btn-secondary btn-sm" onclick="deleteNote()">Delete Note</button>
+                        <input type="text" name="note[title]" id="title" class="form-control" placeholder="Title" value="hello">
+                        <input type="text" name="note[text]"  id="textFill" class="form-control" placeholder="Text" value="world">
+                        <input type="submit" id="save" required="required" class="btn btn-dark btn-sm" onclick="saveNote()">
+                        <div id="delete" required="required" class="btn btn-secondary btn-sm" onclick="deleteNote()">Delete Note</div>
                     </form>
                 </div>
                 <div class="col-lg-9 col-sm-6 col-12" id="pastNotes">
@@ -23,5 +23,8 @@
                     </div>
                 </div> 
             </div>
+
+            <!--Dummy iframe is used so that form does not redirect from the current page-->
+            <iframe width="0" height="0"  name="dummyframe" id="dummyframe"></iframe>
 
 <% include ./partials/footer %>

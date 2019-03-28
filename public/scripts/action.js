@@ -15,16 +15,13 @@ function createCardTemplate(title, text){
 }
 // function to make note visible to user
 function newNote () {
+    document.getElementById('title').value = "";
+    document.getElementById('textFill').value = "";
     if(document.getElementsByClassName('newNote')[0].style.visibility != "visible"){
         document.getElementsByClassName('newNote')[0].style.visibility = "visible";
     }
-    else {
-        document.getElementById('title').value = "";
-        document.getElementById('textFill').value = "";
-    }
     
 }
-
 // function to save the note that the user made
 function saveNote () {
     // fetch title and text to create card
@@ -40,9 +37,8 @@ function saveNote () {
 // function to delete the note before the user creates it
 function deleteNote() {
     // make card hidden and reset input values to blank
+    
     document.getElementsByClassName('newNote')[0].style.visibility = "hidden";
-    document.getElementById('title').value = "";
-    document.getElementById('textFill').value = "";
 }
 
 
