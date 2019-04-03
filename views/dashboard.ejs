@@ -2,29 +2,44 @@
             <div class="jumbotron">
                 <h1 class="display 4">Welcome to the notepad web app <%= currentUser.username %></h1>
                 <span class="lead"> Start writing away, you'll love it.</span>
-                <span class="auth">Sign out</span>
-                <span class="auth">Login</span>
+                <a class="auth" href="/logout">Sign out</a>
                 <hr class="my-2">
-                <button type="button" class="btn btn-dark" onclick="newNote()">New Note</button>
+                <button type="button" id="newNotebtn" class="btn btn-dark" onclick="newNote()">New Note</button>
                 
             </div>
             <div class="row" id="pageRow">
                 <div id="left" class="rightBorder col-lg-3 col-sm-6 col-12">
-                    <form class="newNote" action="/note/" method="POST" target="dummyframe" id="newNote">
-                        <h6 class="textField">Text field below:</h6>
-                        <input type="text" name="note[title]" id="title" class="form-control" placeholder="Title" value="hello">
-                        <input type="text" name="note[text]"  id="textFill" class="form-control" placeholder="Text" value="world">
-                        <input type="submit" id="save" required="required" class="btn btn-dark btn-sm" onclick="saveNote()">
+                    <!--This is the newnote function-->
+                    <form id="newNote" action="/note/" method="POST" id="newNote">
+                        <h6 class="textField">New Note:</h6>
+                        <input type="text" name="note[title]" id="title" class="form-control" placeholder="Title">
+                        <textarea name="note[text]" class="form-control" id="textFill" rows="4" placeholder="Text"></textarea>
+                        <input type="submit" id="save" required="required" class="btn btn-dark btn-sm">
                         <div id="delete" required="required" class="btn btn-secondary btn-sm" onclick="deleteNote()">Delete Note</div>
                     </form>
                 </div>
+
                 <div class="col-lg-9 col-sm-6 col-12" id="pastNotes">
                     <div class="row" id="holdNotes">
+                        <% currentUser.notes.forEach(function(note){ %>
+                            <div class='card col-lg-3 col-md-6 col-12' id="<%= note._id %>">
+                               <div class='card-body'>
+                                   <h5 class='card-title'><%= note.title %></h5>
+                                   <p class='card-text'><%= note.text %></p>
+                                    <div class='row'>
+                                            <form class='col-6' action='/note/<%= note._id %>/edit' method='GET'>
+                                                <button type='submit' id='editExistingNote'class='btn btn-dark btn-sm existingButton'>Edit</button>
+                                            </form>
+                                            <form class='col-6' action='/note/<%= note._id %>/?_method=DELETE' method='POST' onclick="hideCard('<%= note._id %>')">
+                                                <button type='submit'id='deleteExistingNote'class='btn btn-dark btn-sm existingButton'>Delete</button>
+                                            </form>
+                                    </div>
+                               </div>
+                            </div>
+                        <% }); %>
                     </div>
                 </div> 
             </div>
-
-            <!--Dummy iframe is used so that form does not redirect from the current page-->
-            <iframe width="0" height="0"  name="dummyframe" id="dummyframe"></iframe>
+        
 
 <% include ./partials/footer %>

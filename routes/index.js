@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router({mergeParams: true});
 var passport = require("passport");
 var User = require("../models/user");
+var Note = require("../models/note");
 var middleware = require("../middleware/index.js");
 
 // landing page redirection
@@ -52,13 +53,23 @@ router.get("/buffer", function(req, res){
 })
 // logout GET request
 router.get("/logout", function(req, res){
-    res.logout();
-    res.redirect("/landing");
+    req.logout();
+    res.redirect("/");
 })
 
 // Dashboard GET request
 router.get("/dashboard/:name", function(req,res){
-    res.render("./dashboard");
+    User.findById(req.user._id).populate("notes").exec(function(err, currUser){
+        if(err){
+            console.log(err)
+        }
+        else{
+            // renders from views dir as the root folder
+            // in app.js we defined current user as a local var in each ejs page
+            // target note will be null initially because the user has to trigger the note
+            res.render("./dashboard", {currentUser: currUser, targetNote: null});
+        }
+    });
 })
 
 // export these routes

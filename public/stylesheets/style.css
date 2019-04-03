@@ -3,7 +3,6 @@
 /* Dashboard Styling */
 
 .navbar {
-    background-color: #e9ecef;
     color: black;
 }
 
@@ -14,15 +13,15 @@
 .auth {
     float: right;
     margin: 10px;
-}
-
-.auth:hover {
-    color: #61B85E;
+    color: white;
 }
 
 .jumbotron {
     padding-bottom: 3%;
     margin-bottom: 0px;
+    background-color: #d36600;
+    color: white;
+    border-bottom: 0.5px solid grey;
 }
 
 html, body {
@@ -37,6 +36,10 @@ html, body {
 
 .textField {
     font-weight: 300;
+}
+
+.col-6 {
+    border-top: solid black 1px;
 }
 
 .card {
@@ -59,14 +62,24 @@ html, body {
 
 .card {
     margin:0;
-    border: 7px solid black;
+    background-color: #ffcda8;
+    border: 7px solid #fff8f2;
     padding-left: 0;
     padding-right: 0;
     border-radius: 10px;
+    float:left;
 }
 
 .card-title {
-    display: inline-flex
+    display: inline-flex;
+    margin-bottom: 5px;
+}
+
+.card-text {
+    font-weight: 300;
+    font-size: 15px;
+    text-align: left;
+    margin: 0 0 10px 0;
 }
 
 .card-body {
@@ -75,26 +88,38 @@ html, body {
     
 }
 
+.col-6 {
+    padding: 0px;
+}
 .existingButton {
     border-radius: 0;
     margin-bottom: 3px;
     background-color: white;
     border: 0px;
-    border-top: solid 1px black;
     color: black;
     padding: 0px;
     bottom: 0;
     height: 100%;
 }
 
+.form {
+    padding: 0px;
+}
+
 #delete:hover {
-    background-color: #E75050;
-    border: #E75050;
+    background-color: #ed1523;
+    border: #ed1523;
     animation: 0;
 }
 
 #left {
-    background-color: #FEFBEF;
+    background-color: #fff8f2;
+    border-right: 0.5px black solid;
+}
+
+#save, #delete {
+    background-color: #d36600;
+    border: none;
 }
 
 #save:hover {
@@ -104,28 +129,72 @@ html, body {
 }
 
 #pastNotes {
-    background-color: black;
     display:  inline-flex;
     flex-flow: column;
     padding-right: 20px;
-    border-right: #FF8801 solid 20px;
+    background-color: #fff8f2;
+    border-right: none;
 }
 
-#newNote {
+#newNote, #editNote {
     visibility: hidden;
     display: inline-block;
     margin: 5px;
+}
+
+#newNotebtn {
+    background-color: white;
+    color: #d36600;
+    border: none;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+
+#newNotebtn:hover {
+    background-color: #595552;
+    color: white;
+}
+
+#newNotebtn:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 #pageRow {
     height: 100%;
 }
 
+#editExistingNote, #deleteExistingNote{
+    width:100%;
+    padding: 0;
+    background-color: #ffcda8;
+    color: black;
+}
+
 #deleteExistingNote:hover {
     background-color: #F8ADAA;
-    color: black;
 }
 #editExistingNote:hover {
     background-color: #ADF8AA;
     color: black;
+}
+
+#textFill {
+    resize: none;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+#title:focus, #textFill:focus {
+    outline: none;
+    box-shadow: none;
+    border: solid 1px #ffcda8;
+}
+
+.lead {
+    -webkit-animation: fadein 3s;   /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 3s;      /* Firefox < 16 */
+    -ms-animation: fadein 3s;       /* Internet Explorer */
+    -o-animation: fadein 3s;        /* Opera < 12.1 */ 
+    animation: fadein 3s;
 }

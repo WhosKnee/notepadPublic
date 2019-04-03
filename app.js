@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 var passport = require("passport");
+var methodOverride = require("method-override")
 var LocalStrategy = require("passport-local");
 
 // connect mongoose to a database
@@ -13,6 +14,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // set ejs as the view engine
 app.set("view engine", "ejs");
+
+// use method override
+app.use(methodOverride("_method"));
 
 // fetch models for user and note
 var User = require("./models/user.js");
@@ -30,6 +34,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+/*
 // this will pass currentUser as a variable which can be used in any
 // ejs page to access the user
 // will have "currentUser" from req.user. I.e {currentUser: req.user}
@@ -37,6 +42,7 @@ app.use(function(req, res, next){
     res.locals.currentUser = req.user;
     next();
 })
+*/
 
 // get routes from routes folder
 var indexRoutes = require("./routes/index.js");
