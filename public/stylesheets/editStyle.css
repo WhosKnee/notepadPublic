@@ -10,6 +10,11 @@ p {
     font-weight: 600;
 }
 
+
+
+a:hover {
+    color: #d36600;
+}
 .title {
     margin-top: 3%;
     padding: 2% 2% 2% 2%;
@@ -55,7 +60,7 @@ p {
 #submit {
     width: 80%;
     text-align: center;
-    margin: 10% 9% 0 9%;
+    margin: 10% 9% 10% 9%;
 }
 
 #text-area {

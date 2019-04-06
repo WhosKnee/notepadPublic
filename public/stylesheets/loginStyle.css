@@ -10,6 +10,15 @@ p {
     font-weight: 600;
 }
 
+a {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+}
+
+a:hover {
+    color: #d36600;
+}
+
 .cred {
     margin-bottom: 10%;
     text-align: center;
@@ -57,7 +66,7 @@ p {
 #submit {
     width: 80%;
     text-align: center;
-    margin: 10% 9% 0 9%;
+    margin: 10% 9% 10% 9%;
 }
 
 @keyframes bgColorTransition {

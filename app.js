@@ -7,7 +7,8 @@ var methodOverride = require("method-override")
 var LocalStrategy = require("passport-local");
 
 // connect mongoose to a database
-mongoose.connect('mongodb://localhost:27017/notepad_1', { useNewUrlParser: true });
+//mongoose.connect('mongodb://localhost:27017/notepad_1', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://husnifareed9:Gifted99@cluster0-vlwgr.mongodb.net/test?retryWrites=true', { useNewUrlParser: true })
 
 // use bodyparser when fetching input data from a form
 app.use(bodyParser.urlencoded({extended: true}));
