@@ -6,7 +6,7 @@
     <p>Edit Note</p>
     <form action="/note/<%= note._id %>/?_method=PUT" method="POST">
         <span id="title">Title</span>
-        <input class="cred" type="text" name="note[title]" value="<%= note.title %>">
+        <input class="title" type="text" name="note[title]" value="<%= note.title %>">
         <span id="password">Text</span>
         <textarea id="text-area" name="note[text]" rows="4"><%= note.text %></textarea>
         <button id="submit" class="btn btn-outline-dark">Update Note</button>

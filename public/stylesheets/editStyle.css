@@ -10,13 +10,14 @@ p {
     font-weight: 600;
 }
 
-.cred {
+.title {
     margin-top: 3%;
     padding: 2% 2% 2% 2%;
     margin-bottom: 10%;
     text-align: left;
     border: black solid 0.5px;
     border-radius: 5px;
+    width: 180.67px;
 }
 
 .fa-user, .fa-fingerprint {

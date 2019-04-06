@@ -73,6 +73,7 @@ html, body {
 .card-title {
     display: inline-flex;
     margin-bottom: 5px;
+    text-transform: capitalize;
 }
 
 .card-text {
@@ -85,7 +86,7 @@ html, body {
 .card-body {
     margin: 0;
     padding-bottom: 0;
-    
+    padding-top: 10px;
 }
 
 .col-6 {
@@ -104,6 +105,19 @@ html, body {
 
 .form {
     padding: 0px;
+}
+
+#card-date {
+    font-style: italic;
+    font-size: 10px;
+    text-align: right;
+    margin: 1% 0 3%;
+}
+
+#date {
+    border: lightgrey 1px solid;
+    border-radius: 5px;
+    margin-bottom: 3%;
 }
 
 #delete:hover {
@@ -182,7 +196,7 @@ html, body {
 #textFill {
     resize: none;
     width: 100%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 #title:focus, #textFill:focus {

@@ -14,8 +14,15 @@ router.post("/note/", function(req, res){
             console.log(err);
         }
         else {
+            // get the date from the date input
+            var monthNames = ["January", "February", "March", "April", "May", "June",
+                                "July", "August", "September", "October", "November", "December"];
+            var date = new Date(req.body.date);
+            // e.g "March 4, 2019"
+            var dateString = monthNames[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
             // create the note object
-            Note.create(req.body.note, function(err, newNote){
+            var noteContent = {title: req.body.title, text: req.body.text, date: dateString}
+            Note.create(noteContent, function(err, newNote){
                 if(err){
                     console.log(err);
                 }
