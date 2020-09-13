@@ -1,3 +1,5 @@
+// Husni Fareed, husnifareed@mail.utoronto.ca, 2020
+
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
@@ -7,8 +9,7 @@ var methodOverride = require("method-override")
 var LocalStrategy = require("passport-local");
 
 // connect mongoose to a database
-//mongoose.connect('mongodb://localhost:27017/notepad_1', { useNewUrlParser: true });
-mongoose.connect('mongodb+srv://husnifareed9:Gifted99@cluster0-vlwgr.mongodb.net/test?retryWrites=true', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost:27017/notepad_1', { useNewUrlParser: true });
 
 // use bodyparser when fetching input data from a form
 app.use(bodyParser.urlencoded({extended: true}));
@@ -34,16 +35,6 @@ app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
-/*
-// this will pass currentUser as a variable which can be used in any
-// ejs page to access the user
-// will have "currentUser" from req.user. I.e {currentUser: req.user}
-app.use(function(req, res, next){
-    res.locals.currentUser = req.user;
-    next();
-})
-*/
 
 // get routes from routes folder
 var indexRoutes = require("./routes/index.js");
